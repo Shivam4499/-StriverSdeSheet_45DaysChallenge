@@ -1,1 +1,1 @@
-# -StriverSdeSheet_45DaysChallenge
+# StriverSdeSheet_45DaysChallenge
