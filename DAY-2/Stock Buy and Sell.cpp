@@ -45,6 +45,8 @@ using namespace std;
 
 // ************************************************** Optimal Solution ******************************************** //
 
+//   T.C ===> O(N)      S.C ==> O(1)
+
 
 
 int maxProfit(vector<int> &arr)
