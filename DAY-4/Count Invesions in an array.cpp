@@ -48,7 +48,7 @@ using namespace std;
 
 // ********************************************** optimal Solution ******************************************************* //
 
-//    T.C ==> O()
+//    T.C ==> O(NlogN)    S.C ==> O(1)
 
 int merge(vector<int> &arr, int low, int mid, int high) {
     vector<int> temp; // temporary array
