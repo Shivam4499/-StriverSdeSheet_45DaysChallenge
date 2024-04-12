@@ -1,35 +1,96 @@
-// ********************************************* Largest  ********************************************************** //
+// ********************************************* NAIVE SOLn  ********************************************************** //
+
+
+
 
 #include<bits/stdc++.h>
 using namespace std;
 
 
-void largestAndSmallest(int arr[],int n)
+
+
+// int getLargest(int arr[],int n)
+// {
+//     for(int i=0;i<n;i++)
+//     {
+//         bool flag=true;
+//         for(int j=0;j<n;j++)
+//         {
+//             if(arr[j]>arr[i])
+//             {
+//                 flag=false;
+//                 break;
+//             }
+//         }
+//         if(flag==true)
+//             return i;
+//     }
+//     return -1;
+// }
+// int getSmallest(int arr[],int n)
+// {
+//     for(int i=0;i<n;i++)
+//     {
+//         bool flag=true;
+//         for(int j=0;j<n;j++)
+//         {
+//             if(arr[j]<arr[i])
+//             {
+//                 flag=false;
+//                 break;
+//             }
+//         }
+//         if(flag==true)
+//             return i;
+//     }
+//     return -1;
+// }
+
+
+
+// *********************************************** Efficient Soln ********************************************************* //
+
+
+int getLargest(int arr[],int n)
 {
-    int largest=0,smallest=0;
+    int lar=0;
     for(int i=1;i<n;i++)
     {
-        if(arr[i]>arr[largest])
+        if(arr[i]>arr[lar])
         {
-            arr[largest]=arr[i];
-            largest=i;
-        }
-        if(arr[i]<arr[smallest])
-        {
-            arr[smallest]=arr[i];
-            smallest=i;
+            lar=i;
         }
     }
+    return lar;
 }
+
+int getSmallest(int arr[],int n)
+{
+    int small=0;
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]<arr[small])
+        {
+            small=i;
+        }
+    }
+    return small;
+}
+
 
 int main()
 {
-    int arr[]={2,5,7,3,8,5};
-    int n=sizeof(arr)/sizeof(arr[0]);
-    int largest,smallest;
-    largestAndSmallest(arr,n);
-    cout<<"Index of the Largest"<<largest<<endl;
-    cout<<"Index of the Smallest"<<smallest<<endl;
-    cout<<"Largest Element"<<arr[largest]<<endl;
-    cout<<"Smallest Element"<<arr[smallest];
+    cout<<"size of array: ";
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int largest=getLargest(arr,n);
+    int smallest=getSmallest(arr,n);
+    cout<<"Index of the Largest: "<<largest<<endl;
+    cout<<"Index of the Smallest: "<<smallest<<endl;
+    return 0;
 }
