@@ -1,7 +1,32 @@
+// ********************************************** Naive Soln ****************************************************** //
+
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
-void moveZeros(int arr[],int n)
+// void moveToEnd(int arr[],int n)
+// {
+//     for(int i=0;i<n;i++)
+//     {
+//         if(arr[i]==0)
+//         {
+//             for(int j=i+1;j<n;j++)
+//             {
+//                 if(arr[j]!=0)
+//                 {
+//                     swap(arr[i],arr[j]);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// ************************************************* Efficient Soln **************************************************** //
+
+void moveToEnd(int arr[],int n)
 {
     int count=0;
     for(int i=0;i<n;i++)
@@ -16,9 +41,15 @@ void moveZeros(int arr[],int n)
 
 int main()
 {
-    int arr[]={2,0,5,0,3,0,0,2,6};
-    int n=9;
-    moveZeros(arr,n);
+    int n;
+    cout<<"size of array: ";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    moveToEnd(arr,n);
     for(int i=0;i<n;i++)
     {
         cout<<arr[i]<<" ";
